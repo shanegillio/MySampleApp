@@ -1,7 +1,58 @@
-
-   
 name: Nightly Build
+
 on: [push]
 
 jobs:
-  uses: yukiarrr/ios-build-action@v1.5.0
+  build: 
+      steps: 
+      - name: iOS Build Action
+      # You may pin to the exact commit or the version.
+      # uses: yukiarrr/ios-build-action@3d8ff63d40bce5dfd0ff8d1dda6ce543bf4c605a
+      uses: yukiarrr/ios-build-action@v1.5.0
+      with:
+       # Base64 encoded p12 key
+       p12-key-base64: # optional
+       # Base64 encoded certificate for the p12 key
+       p12-cer-base64: # optional
+       # Base64 encoded p12 file (key + cert)
+       p12-base64: # optional
+       # Base64 encoded mobileprovision file
+       mobileprovision-base64: # optional
+       # p12 key path
+       p12-key-path: # optional
+       # Certificate path for the p12 key
+       p12-cer-path: # optional
+       # p12 path (key + cert)
+       p12-path: # optional
+       # mobileprovision path
+       mobileprovision-path: # optional
+       # Project path
+       project-path: 
+       # For example, iOS Distribution
+       code-signing-identity: 
+       # Team id
+       team-id: 
+       # Workspace path
+       workspace-path: # optional, default is 
+       # Choose app-store, ad-hoc, package, enterprise, development, or developer-id
+       export-method: # optional, default is app-store
+       # For example, Debug, Release
+       configuration: # optional, default is Release
+       # Certificate password
+       certificate-password: # optional, default is 
+       # Output path of ipa
+       output-path: # optional, default is output.ipa
+       # Scheme
+       scheme: # optional, default is 
+       # Targets to be updated with mobileprovision, code signing identity, etc
+       update-targets: # optional, default is 
+       # Deprecated, use update-targets instead
+       disable-targets: # optional, default is 
+       # Path to an export options plist
+       export-options: # optional, default is 
+       # The SDK that should be used for building the application
+       build-sdk: # optional, default is 
+       # Use a custom destination for building the app
+       build-destination: # optional, default is 
+       # Path for Swift Package Manager dependencies
+       cloned-source-packages-path: # optional, default is 
