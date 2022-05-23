@@ -1,5 +1,7 @@
-on: [push]
-name: Alpha Build
+on:
+  release:
+    types: [created]
+name: Handle Release
 jobs:
   generate:
     name: Create release-artifacts
@@ -10,4 +12,3 @@ jobs:
       uses: skx/github-action-build@master
       with:
         builder: .github/build
-
