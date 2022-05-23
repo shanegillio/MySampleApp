@@ -11,4 +11,4 @@ jobs:
     - name: Generate
       uses: skx/github-action-build@master
       with:
-        builder: swift build
+        builder: .github/build swift build
